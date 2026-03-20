@@ -11,6 +11,11 @@ export default function AppHeader() {
                 <NavLink to="/products" >Prodotti</NavLink>
             </nav>
 
+            {/* <div className="search-bar">
+                <i className="bi bi-search"></i>
+                <input type="text" placeholder="Search for products ..." />
+            </div> */}
+
             <nav id="op-nav">
                 <Link to="/cart">
                     <i className="bi bi-cart2"></i>
