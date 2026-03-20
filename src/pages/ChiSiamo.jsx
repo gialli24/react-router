@@ -2,10 +2,8 @@ import AppHeader from "../components/AppHeader";
 
 export default function ChiSiamo() {
     return (
-        <>
-            <AppHeader />
-
+        <main>
             <h1>Chi Siamo</h1>
-        </>
+        </main>
     );
 }
