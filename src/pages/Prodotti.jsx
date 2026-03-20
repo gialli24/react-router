@@ -1,5 +1,3 @@
-import AppHeader from "../components/AppHeader";
-
 export default function Prodotti() {
     return (
         <>
