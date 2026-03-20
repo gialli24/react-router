@@ -163,6 +163,10 @@ section#brands {
     background-color: var(--color-dark);
 }
 
+section#contacts .row {
+    margin: 3rem 0;
+}
+
 /* End Main Region */
 
 @media screen and (max-width: 576px) {
