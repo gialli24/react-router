@@ -1,4 +1,4 @@
-export default function ChiSiamo() {
+export default function AboutUs() {
     return (
         <main>
             <section id="contacts">

@@ -1,37 +1,40 @@
 import { Link, NavLink } from "react-router-dom";
 import Banner from "./Banner";
+import AppLogo from "./AppLogo";
+import '../assets/css/Headers.css'
+import { main_menu } from '../data/menu.js'
+import { user_actions_menu } from '../data/menu.js'
+import { useState } from "react";
 
 export default function AppHeader() {
+
     return (
         <>
             <Banner>Sign up and get 20% off to your list order.</Banner>
+
             <header id="app-header">
                 <div className="app-container">
                     <div className="header-wrapper">
-                        <h1>Shop</h1>
+                        <AppLogo />
 
-                        <nav id="pagination-nav">
-                            <NavLink to="/" >Home</NavLink>
-                            <NavLink to="/about-us" >Chi Siamo</NavLink>
-                            <NavLink to="/products" >Prodotti</NavLink>
+                        <nav id="main-nav">
+                            {
+                                main_menu.map(page => (
+                                    <NavLink key={page.id} to={page.url} >{page.title}</NavLink>
+                                ))
+                            }
                         </nav>
 
-                        {/* <div className="search-bar">
-                        <i className="bi bi-search"></i>
-                        <input type="text" placeholder="Search for products ..." />
-                    </div> */}
-
-                        <nav id="op-nav">
-                            <Link to="/cart">
-                                <i className="bi bi-cart2"></i>
-                            </Link>
-                            <Link to="/profile">
-                                <i className="bi bi-person-circle"></i>
-                            </Link>
+                        <nav id="user-actions-nav">
+                            {
+                                user_actions_menu.map(page => (
+                                    <Link key={page.id} to={page.url} ><i className={`bi ${page.icon}`} ></i></Link>
+                                ))
+                            }
                         </nav>
                     </div>
                 </div>
-            </header>
+            </header >
         </>
     );
 }

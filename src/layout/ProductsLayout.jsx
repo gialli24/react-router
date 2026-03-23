@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import ProductsHeader from "../components/ProductsHeader";
+import AppHeader from "../components/AppHeader";
 
-export default function DefaultLayout() {
+export default function ProductsLayout() {
     return (
         <>
-            <ProductsHeader />
+            <AppHeader />
             <Outlet />
         </>
     );

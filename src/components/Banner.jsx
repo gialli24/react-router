@@ -1,3 +1,5 @@
+import '../assets/css/Banner.css'
+
 export default function Banner(props) {
     return (
         <div id="banner">
