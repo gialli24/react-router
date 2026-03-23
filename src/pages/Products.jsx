@@ -48,24 +48,36 @@ export default function Products() {
                         <input type="text" placeholder="Search for products ..." value={searchValue} onChange={e => setSearchValue(e.target.value)} />
                     </div>
 
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 mt-4">
-                        {
-                            renderProducts.map((product, i) => (
-                                <div className='col product' key={i}>
+                    {
 
-                                    <Link to={`/product/${product.id}`} >
-                                        <img src={product.image} alt="" />
-                                    </Link>
+                        renderProducts.length === 0 ?
 
-                                    <span>{product.category}</span>
+                            <div class="spinner-grow" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
 
-                                    <Link to={`/product/${product.id}`} ><h4>{product.title}</h4></Link>
+                            :
 
-                                    <span>$ {product.price}</span>
-                                </div>
-                            ))
-                        }
-                    </div>
+                            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 mt-4">
+                                {
+                                    renderProducts.map((product, i) => (
+                                        <div className='col product' key={i}>
+
+                                            <Link to={`/product/${product.id}`} >
+                                                <img src={product.image} alt="" />
+                                            </Link>
+
+                                            <span>{product.category}</span>
+
+                                            <Link to={`/product/${product.id}`} ><h4>{product.title}</h4></Link>
+
+                                            <span>$ {product.price}</span>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                    }
+
                 </div>
             </section>
         </main >

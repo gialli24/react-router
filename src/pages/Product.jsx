@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Button from "../components/Button";
 
 export default function Product() {
 
@@ -33,15 +34,29 @@ export default function Product() {
                     </div>
 
                     <div className="col product-details">
-                        <span>{productData.category}</span>
 
-                        <h2 className="mt-4">{productData.title}</h2>
+                        {
 
-                        <p>{productData.description}</p>
+                            productData.length === 0 ?
 
-                        <div>{productData.price}</div>
+                                <div class="spinner-grow" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
 
-                        <button className="app-btn primary" >Add to Cart</button>
+                                :
+                                <>
+                                    <span>{productData.category}</span>
+
+                                    <h2 className="mt-4">{productData.title}</h2>
+
+                                    <p>{productData.description}</p>
+
+                                    <div>{productData.price}</div>
+
+                                    <Button type={"primary"} >Add to Cart</Button>
+                                </>
+                        }
+
 
                     </div>
                 </div>
