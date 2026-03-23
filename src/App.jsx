@@ -5,7 +5,6 @@ import Products from "./pages/Products"
 import Product from "./pages/Product"
 
 import MainLayout from "./layout/MainLayout"
-import ProductsLayout from "./layout/ProductsLayout"
 
 function App() {
 
@@ -16,11 +15,8 @@ function App() {
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/product/:id" element={<Product />} />
-          </Route>
-
-          <Route element={<ProductsLayout />}>
             <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<Product />} />
           </Route>
         </Routes>
       </BrowserRouter>
