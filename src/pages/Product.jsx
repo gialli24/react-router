@@ -24,6 +24,22 @@ export default function Product() {
         fetchProduct(productEndpoint);
     }, []);
 
+    function next() {
+        if (id == 20) {
+            navigate(`/product/1`);
+        } else {
+            navigate(`/product/${parseInt(id) + 1}`);
+        }
+    }
+
+    function prev() {
+        if (id == 1) {
+            navigate(`/product/20`);
+        } else {
+            navigate(`/product/${parseInt(id) - 1}`);
+        }
+    }
+
     return (
         <main>
             <div className="app-container">
@@ -39,8 +55,8 @@ export default function Product() {
 
                             productData.length === 0 ?
 
-                                <div class="spinner-grow" role="status">
-                                    <span class="visually-hidden">Loading...</span>
+                                <div className="spinner-grow" role="status">
+                                    <span className="visually-hidden">Loading...</span>
                                 </div>
 
                                 :
@@ -57,6 +73,13 @@ export default function Product() {
                                 </>
                         }
 
+
+                        <div className="navigation-prods d-flex justify-content-between">
+
+                            <Button action={prev} ><i className="bi-arrow-left"></i></Button>
+
+                            <Button action={next} ><i className="bi bi-arrow-right"></i></Button>
+                        </div>
 
                     </div>
                 </div>
