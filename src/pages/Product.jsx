@@ -22,7 +22,7 @@ export default function Product() {
 
     useEffect(() => {
         fetchProduct(productEndpoint);
-    }, []);
+    }, [id]);
 
     function next() {
         if (id == 20) {
