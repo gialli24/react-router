@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import AboutUs from "./pages/AboutUs"
 import Products from "./pages/Products"
 import Product from "./pages/Product"
+import E404 from "./pages/E404"
 
 import MainLayout from "./layout/MainLayout"
 
@@ -17,6 +18,7 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<Product />} />
+            <Route path='*' element={<E404 />} />
           </Route>
         </Routes>
       </BrowserRouter>
