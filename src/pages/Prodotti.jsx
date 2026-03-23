@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../assets/css/Prodotti.css'
 import { useEffect, useState } from 'react';
 
@@ -33,11 +34,13 @@ export default function Prodotti() {
                             {
                                 products.map((product, i) => (
                                     <div className='col product-card' key={i}>
-                                        <img src={product.image} alt="" />
+                                        <Link to={`/product/${product.id}`} >
+                                            <img src={product.image} alt="" />
+                                        </Link>
 
                                         <span>{product.category}</span>
 
-                                        <h4>{product.title}</h4>
+                                        <Link to={`/product/${product.id}`} ><h4>{product.title}</h4></Link>
 
                                         <span>$ {product.price}</span>
                                     </div>
@@ -47,6 +50,6 @@ export default function Prodotti() {
                     </div>
                 </div>
             </section>
-        </main>
+        </main >
     );
 }

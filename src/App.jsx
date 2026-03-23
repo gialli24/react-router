@@ -4,6 +4,7 @@ import ChiSiamo from "./pages/ChiSiamo"
 import Prodotti from "./pages/Prodotti"
 import DefaultLayout from "./layout/DefaultLayout"
 import ProductsLayout from "./layout/ProductsLayout"
+import Product from "./pages/Product"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<ChiSiamo />} />
+            <Route path="/product/:id" element={<Product />} />
           </Route>
 
           <Route element={<ProductsLayout />}>
